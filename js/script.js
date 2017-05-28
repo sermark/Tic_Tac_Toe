@@ -1,13 +1,13 @@
 let data = [
-	{text: '+'},
-	{text: '+'},
-	{text: '+'},
-	{text: '+'},
-	{text: '+'},
-	{text: '+'},
-	{text: '+'},
-	{text: '+'},
-	{text: '+'}
+	{text: ' '},
+	{text: ' '},
+	{text: ' '},
+	{text: ' '},
+	{text: ' '},
+	{text: ' '},
+	{text: ' '},
+	{text: ' '},
+	{text: ' '}
 ];
 
 let items;
@@ -18,17 +18,21 @@ let buttonReset = document.createElement('button');
 buttonReset.classList.add('button');
 buttonReset.textContent = 'Reset Game';
 
+
 data.forEach( (item) => {
 	let a = createItem(item.text)
 	fieldGame.appendChild(a);
 	items = fieldGame.querySelectorAll('.item');
 });
 
+fieldGame.appendChild(buttonReset);
+buttonReset.onclick = () => refresh (items);
+
 items.forEach( (e) => {
 	e.addEventListener('click', () => {
 		if (turns == 9) {
 			alert('Tie game');
-			turns = 0;
+			refresh (items)
 		} else if (e.classList.contains('disable')) {
 			alert('This spot is already filled');
 		} else if (turns%2 == 0){
@@ -44,7 +48,7 @@ items.forEach( (e) => {
 		   	   items[0].textContent == 'o' && items[4].textContent == 'o' && items[8].textContent == 'o' ||
 		   	   items[2].textContent == 'o' && items[4].textContent == 'o' && items[6].textContent == 'o'){
 				alert('winner o');
-				turns = 0;
+				refresh (items);
 			} 
 		}
 		else {
@@ -60,7 +64,7 @@ items.forEach( (e) => {
 		   		items[0].textContent == 'x' && items[4].textContent == 'x' && items[8].textContent == 'x' ||
 		   		items[2].textContent == 'x' && items[4].textContent == 'x' && items[6].textContent == 'x'){
 					alert('winner x');
-					turns = 0;
+					refresh (items);
 			}
 		}
 		console.log(turns);
@@ -72,11 +76,19 @@ console.log(items);
 
 
 
-fieldGame.appendChild(buttonReset);
+
 
 function createItem (text) {
 	let item = document.createElement('div');
 	item.textContent = text;
 	item.classList.add('item');
 	return item;
+}
+
+function refresh (arr) {
+	turns = 0;
+	arr.forEach( (elem) => {
+		elem.textContent = '';
+		elem.classList.remove('disable');
+	});
 }
