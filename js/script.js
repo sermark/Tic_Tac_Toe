@@ -18,9 +18,11 @@ let buttonReset = document.createElement('button');
 buttonReset.classList.add('button');
 buttonReset.textContent = 'Reset Game';
 
+let cross = createItem ('', 'line-diag1');
+fieldGame.appendChild(cross);
 
-data.forEach( (item) => {
-	let a = createItem(item.text)
+data.forEach( (itemList) => {
+	let a = createItem(itemList.text, 'item')
 	fieldGame.appendChild(a);
 	items = fieldGame.querySelectorAll('.item');
 });
@@ -38,7 +40,7 @@ items.forEach( (e) => {
 		} else if (turns%2 == 0){
 			turns++;
 			e.textContent = 'o';
-			e.classList.add('disable');
+			e.classList.add('disable', 'red');
 			if(items[0].textContent == 'o' && items[1].textContent == 'o' && items[2].textContent == 'o' ||
 		   	   items[3].textContent == 'o' && items[4].textContent == 'o' && items[5].textContent == 'o' ||
 		   	   items[6].textContent == 'o' && items[7].textContent == 'o' && items[8].textContent == 'o' ||
@@ -54,7 +56,7 @@ items.forEach( (e) => {
 		else {
 			turns++;
 			e.textContent = 'x';
-			e.classList.add('disable');
+			e.classList.add('disable', 'black');
 			if (items[0].textContent == 'x' && items[1].textContent == 'x' && items[2].textContent == 'x' ||
 				items[3].textContent == 'x' && items[4].textContent == 'x' && items[5].textContent == 'x' ||
 		   		items[6].textContent == 'x' && items[7].textContent == 'x' && items[8].textContent == 'x' ||
@@ -67,21 +69,14 @@ items.forEach( (e) => {
 					refresh (items);
 			}
 		}
-		console.log(turns);
 	});
 
 });
 
-console.log(items);
-
-
-
-
-
-function createItem (text) {
+function createItem (text, className) {
 	let item = document.createElement('div');
 	item.textContent = text;
-	item.classList.add('item');
+	item.classList.add(className);
 	return item;
 }
 

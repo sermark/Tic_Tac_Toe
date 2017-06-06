@@ -7,6 +7,7 @@ body{
 }
 
 .container{
+	position: relative;
 	max-width: 380px;
 	margin: 0 auto;
 	display: flex;
@@ -28,19 +29,19 @@ body{
 	color: #020ba8;
 }
 
-.item:nth-child(2),
-.item:nth-child(8) {
+.item:nth-child(3),
+.item:nth-child(9) {
 	border-right: 5px solid #020ba8;
 	border-left: 5px solid #020ba8;
 }
 
-.item:nth-child(4),
-.item:nth-child(6) {
+.item:nth-child(5),
+.item:nth-child(7) {
 	border-top: 5px solid #020ba8;
 	border-bottom: 5px solid #020ba8;
 }
 
-.item:nth-child(5){
+.item:nth-child(6){
 	border: 5px solid #020ba8;
 }
 
@@ -49,4 +50,134 @@ body{
 	cursor: pointer;
 	height: 50px;
 	width: 120px;
+}
+
+.red {
+	color: red;
+}
+
+.black {
+	color:black;
+}
+
+.line-row1 {
+	position: absolute;
+	top:60px;
+	left:60px;
+	height: 10px;
+	width: 280px;
+	background-color: green;
+	border-radius: 25%;
+	animation: change-width 0.5s linear normal;
+}
+
+.line-row2 {
+	position: absolute;
+	top:165px;
+	left:60px;
+	height: 10px;
+	width: 280px;
+	background-color: green;
+	border-radius: 25%;
+	animation: change-width 0.5s linear normal;
+}
+
+.line-row3 {
+	position: absolute;
+	top:270px;
+	left:60px;
+	height: 10px;
+	width: 280px;
+	background-color: green;
+	border-radius: 25%;
+	animation: change-width 0.5s linear normal;
+}
+
+.line-col1 {
+	position: absolute;
+	top:25px;
+	left:90px;
+	height: 280px;
+	width: 10px;
+	background-color: green;
+	border-radius: 25%;
+	animation: change-height 0.5s linear normal;
+}
+
+.line-col2 {
+	position: absolute;
+	top:25px;
+	left:195px;
+	height: 280px;
+	width: 10px;
+	background-color: green;
+	border-radius: 25%;
+	animation: change-height 0.5s linear normal;
+}
+
+.line-col3 {
+	position: absolute;
+	top:25px;
+	left:300px;
+	height: 280px;
+	width: 10px;
+	background-color: green;
+	border-radius: 25%;
+	animation: change-height 0.5s linear normal;
+}
+
+.line-diag1 {
+	position: absolute;
+	top:25px;
+	left:300px;
+	height: 10px;
+	width: 280px;
+	transform: rotate(45deg);
+	background-color: green;
+	border-radius: 25%;
+	animation: change-width 0.5s linear normal;
+}
+
+@keyframes change-width {
+	0% {
+		width: 0;
+	}
+
+	25% {
+		width: 70px;
+	}
+
+	50% {
+		width: 140px;
+	}
+
+	75%{
+		width: 210px;
+	}
+
+	100%{
+		width: 280px;
+	}
+}
+
+@keyframes change-height {
+	0% {
+		height: 0;
+	}
+
+	25% {
+		height: 70px;
+	}
+
+	50% {
+		height: 140px;
+	}
+
+	75%{
+		height: 210px;
+	}
+
+	100%{
+		height: 280px;
+	}
 }
