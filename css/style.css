@@ -60,81 +60,66 @@ body{
 	color:black;
 }
 
-.line-row1 {
+.line {
 	position: absolute;
+	background-color: green;
+	border-radius: 25%;
+}
+
+.row1 {
 	top:60px;
 	left:60px;
 	height: 10px;
 	width: 280px;
-	background-color: green;
-	border-radius: 25%;
 	animation: change-width 0.5s linear normal;
 }
 
-.line-row2 {
-	position: absolute;
+.row2 {
 	top:165px;
 	left:60px;
 	height: 10px;
 	width: 280px;
-	background-color: green;
-	border-radius: 25%;
 	animation: change-width 0.5s linear normal;
 }
 
-.line-row3 {
-	position: absolute;
+.row3 {
 	top:270px;
 	left:60px;
 	height: 10px;
 	width: 280px;
-	background-color: green;
-	border-radius: 25%;
 	animation: change-width 0.5s linear normal;
 }
 
-.line-col1 {
-	position: absolute;
+.col1 {
 	top:25px;
 	left:90px;
 	height: 280px;
 	width: 10px;
-	background-color: green;
-	border-radius: 25%;
 	animation: change-height 0.5s linear normal;
 }
 
-.line-col2 {
-	position: absolute;
+.col2 {
 	top:25px;
 	left:195px;
 	height: 280px;
 	width: 10px;
-	background-color: green;
-	border-radius: 25%;
 	animation: change-height 0.5s linear normal;
 }
 
-.line-col3 {
-	position: absolute;
+.col3 {
 	top:25px;
 	left:300px;
 	height: 280px;
 	width: 10px;
-	background-color: green;
-	border-radius: 25%;
 	animation: change-height 0.5s linear normal;
 }
 
-.line-diag1 {
-	position: absolute;
+.diag1 {
 	top:25px;
 	left:300px;
 	height: 10px;
 	width: 280px;
 	transform: rotate(45deg);
-	background-color: green;
-	border-radius: 25%;
 	animation: change-width 0.5s linear normal;
 }
 
